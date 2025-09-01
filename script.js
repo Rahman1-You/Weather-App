@@ -1,6 +1,6 @@
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric';
 // const apiKey = '31453b7846ccbec6a67e5c2ba5204093'; old key which is deleted
-const apiKey = WEATHER_API_ENVIRONMENT_VARIABLE ;
+// const apiKey = WEATHER_API_ENVIRONMENT_VARIABLE ;
 const searchBox = document.querySelector('.search input');
 const searchBtn = document.querySelector('.search button');
 const weatherImage = document.getElementById('weatherIcon');
@@ -8,7 +8,7 @@ const updates = document.querySelector('.content');
 const errore = document.querySelector('.error');
 
 async function checkWeather(city) {
-    const responce = await fetch(apiUrl + `&q=${city}` + `&appid=${apiKey}`)
+    const responce = await fetch(apiUrl + `&q=${city}` + `&appid=${WEATHER_API_ENVIRONMENT_VARIABLE}`)
     var data = await responce.json();
 
     if (data.cod == '404') {
